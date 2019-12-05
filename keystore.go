@@ -16,7 +16,7 @@ type KeyStore struct {
 }
 
 func New(filename string) (*KeyStore, error) {
-	db, err = bolt.Open(filename, 0666, nil)
+	db, err := bolt.Open(filename, 0666, nil)
 	return &KeyStore{db: db}, err
 }
 
