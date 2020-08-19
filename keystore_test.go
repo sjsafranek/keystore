@@ -24,4 +24,7 @@ func TestSetGet(t *testing.T) {
 	assert.Equal(t, KeyErrNotExist, err)
 	err = db.Get("nobucket", "nokey", &s2)
 	assert.Equal(t, BucketErrNotExist, err)
+
+	err = db.Close()
+	assert.Nil(t, err)
 }
